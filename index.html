@@ -1,37 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Startup – Affordable Maths Learning</title>
+  <meta name="description" content="Recorded + live maths classes at low cost. Instant booking & group mentoring." />
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-    header { background: #333; color: #fff; padding: 1rem; }
-    nav a { color: #fff; margin-right: 1rem; text-decoration: none; }
-    section { padding: 2rem; }
+    body{font-family:system-ui,Arial,sans-serif;max-width:900px;margin:40px auto;padding:0 16px;line-height:1.6}
+    header{margin-bottom:24px}
+    nav a{margin-right:12px;text-decoration:none}
+    a.button{display:inline-block;padding:10px 14px;border:1px solid #222;border-radius:8px;text-decoration:none}
+    .cards{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+    .card{border:1px solid #eee;border-radius:12px;padding:16px}
+    footer{margin-top:32px;font-size:.9em;color:#666}
   </style>
 </head>
 <body>
   <header>
     <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="live-course.html">Live Course</a>
+      <a href="practice.html">Practice</a>
+      <a href="contact.html">Contact</a>
     </nav>
+    <h1>Affordable Online Maths Learning</h1>
+    <p>Recorded classes, every 3rd class live, question practice + video solutions. Small batches (2/4/8), instant tutor booking.</p>
+    <a class="button" href="mailto:you@yourdomain.com">Contact Us</a>
   </header>
-  <main>
-    <section id="home">
-      <h1>Welcome to my website</h1>
-      <p>This is the home section.</p>
-    </section>
-    <section id="about">
-      <h2>About</h2>
-      <p>Information about the site or person.</p>
-    </section>
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>You can contact me at <a href="mailto:example@example.com">example@example.com</a>.</p>
-    </section>
-  </main>
+
+  <section class="cards">
+    <div class="card"><h3>Hybrid Course</h3><p>₹800/year per student.</p></div>
+    <div class="card"><h3>Batch (2/4/8)</h3><p>₹500 ÷ batch size per year.</p></div>
+    <div class="card"><h3>Instant Booking</h3><p>₹6 per minute.</p></div>
+    <div class="card"><h3>Group Study</h3><p>₹500 ÷ group size per session.</p></div>
+  </section>
+
+  <footer>
+    <p>© <span id="y"></span> Your Startup • <a href="/privacy.html">Privacy</a> • <a href="/terms.html">Terms</a></p>
+  </footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
