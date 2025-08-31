@@ -1,0 +1,4 @@
+body{font-family:system-ui,Arial,sans-serif;max-width:800px;margin:40px auto;padding:0 16px;line-height:1.6}
+header{text-align:center;margin-bottom:32px}
+nav a{margin-right:12px;text-decoration:none}
+.features ul{list-style:disc;margin-left:20px}
