@@ -17,7 +17,6 @@
     <h1>Book Your Mentor</h1>
     <p>Schedule a session with our mentors and get personalized guidance.</p>
   </header>
-
   <section class="booking-section">
     <form id="booking-form" class="form-card">
       <p>
@@ -82,14 +81,16 @@
           body: JSON.stringify(emailPayload)
         });
 
-        if (emailRes.ok && telegramRes.ok) {
-          window.location.href = GROUP_LINK;
+        const telegramRes = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ chat_id: CHAT_ID, text: message })
+        });
 
-        if (res.ok) {
+        if (emailRes.ok) {
           window.location.href = GROUP_LINK;
           alert('Booking sent!');
           form.reset();
-
         } else {
           alert('Failed to send booking.');
         }
