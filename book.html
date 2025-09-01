@@ -17,8 +17,9 @@
     <h1>Book Your Mentor</h1>
     <p>Schedule a session with our mentors and get personalized guidance.</p>
   </header>
-  <section>
-    <form id="booking-form">
+
+  <section class="booking-section">
+    <form id="booking-form" class="form-card">
       <p>
         <label>Name:<br>
           <input type="text" name="name" required>
@@ -49,7 +50,6 @@
       </p>
       <button type="submit">Book Now</button>
     </form>
-    <p>After booking, join our Telegram for the latest Zoom code: <a href="https://t.me/padhado">t.me/padhado</a></p>
   </section>
   <footer>
     <p>© <span id="y"></span> Your Startup</p>
@@ -57,6 +57,7 @@
   <script>
     const BOT_TOKEN = 'YOUR_BOT_TOKEN'; // replace with your bot token
     const CHAT_ID = 'YOUR_CHAT_ID';     // replace with your chat ID
+    const GROUP_LINK = 'https://t.me/padhado';
 
     document.getElementById('booking-form').addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -71,6 +72,7 @@
           body: JSON.stringify({ chat_id: CHAT_ID, text: message })
         });
         if (res.ok) {
+          window.location.href = GROUP_LINK;
           alert('Booking sent!');
           form.reset();
         } else {
