@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Book Mentor – Padhado</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="course.html">Course</a>
+      <a href="book.html">Book</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <h1>Book Your Mentor</h1>
+    <p>Schedule a session with our mentors and get personalized guidance.</p>
+  </header>
+  <section>
+    <form>
+      <p>
+        <label>Name:<br>
+          <input type="text" name="name" required>
+        </label>
+      </p>
+      <p>
+        <label>Email:<br>
+          <input type="email" name="email" required>
+        </label>
+      </p>
+      <p>
+        <label>Preferred Date:<br>
+          <input type="date" name="date" required>
+        </label>
+      </p>
+      <button type="submit">Book Now</button>
+    </form>
+    <p>After booking, join our Telegram for the latest Zoom code: <a href="https://t.me/padhado">t.me/padhado</a></p>
+  </section>
+  <footer>
+    <p>© <span id="y"></span> Your Startup</p>
+  </footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
