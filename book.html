@@ -28,8 +28,8 @@
         <label>Class:<br>
           <select name="class" required>
             <option value="">Select Class</option>
-            <option value="9">9th</option>
-            <option value="10">10th</option>
+            <option value="9">9th CBSE</option>
+            <option value="10">10th CBSE</option>
           </select>
         </label>
       </p>
@@ -54,8 +54,6 @@
     <p>© <span id="y"></span> Your Startup</p>
   </footer>
   <script>
-    const BOT_TOKEN = 'YOUR_BOT_TOKEN'; // replace with your bot token
-    const CHAT_ID = 'YOUR_CHAT_ID';     // replace with your chat ID
     const GROUP_LINK = 'https://t.me/padhado';
 
     document.getElementById('booking-form').addEventListener('submit', async (e) => {
@@ -68,7 +66,7 @@
         class: data.get('class'),
         subject: data.get('subject'),
         phone: data.get('phone'),
-        _subject: 'New booking request'
+        _subject: `New booking request ${data.get('phone')}`
       };
 
       try {
@@ -81,11 +79,6 @@
           body: JSON.stringify(emailPayload)
         });
 
-        const telegramRes = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ chat_id: CHAT_ID, text: message })
-        });
 
         if (emailRes.ok) {
           window.location.href = GROUP_LINK;
