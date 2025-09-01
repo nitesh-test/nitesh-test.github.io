@@ -22,6 +22,23 @@ header {
   margin-bottom: 24px;
 }
 
+.hero {
+  background: linear-gradient(135deg, #6fb1fc, #4364f7);
+  color: #fff;
+  padding: 40px 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.hero h1 {
+  color: #fff;
+}
+
+.hero p {
+  margin: 0 auto 16px;
+  max-width: 700px;
+}
+
 nav a {
   color: #fff;
   margin: 0 12px;
@@ -89,6 +106,14 @@ h1 {
 
 .button:hover {
   background: #218838;
+}
+
+.button.youtube {
+  background: #ff0000;
+}
+
+.button.youtube:hover {
+  background: #cc0000;
 }
 
 footer {
