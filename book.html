@@ -18,20 +18,33 @@
     <p>Schedule a session with our mentors and get personalized guidance.</p>
   </header>
   <section>
-    <form>
+    <form id="booking-form">
       <p>
         <label>Name:<br>
           <input type="text" name="name" required>
         </label>
       </p>
       <p>
-        <label>Email:<br>
-          <input type="email" name="email" required>
+        <label>Class:<br>
+          <select name="class" required>
+            <option value="">Select Class</option>
+            <option value="9">9th</option>
+            <option value="10">10th</option>
+          </select>
         </label>
       </p>
       <p>
-        <label>Preferred Date:<br>
-          <input type="date" name="date" required>
+        <label>Subject:<br>
+          <select name="subject" required>
+            <option value="">Select Subject</option>
+            <option value="Maths">Maths</option>
+            <option value="Science">Science</option>
+          </select>
+        </label>
+      </p>
+      <p>
+        <label>Phone:<br>
+          <input type="tel" name="phone" required>
         </label>
       </p>
       <button type="submit">Book Now</button>
@@ -41,6 +54,34 @@
   <footer>
     <p>© <span id="y"></span> Your Startup</p>
   </footer>
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+  <script>
+    const BOT_TOKEN = 'YOUR_BOT_TOKEN'; // replace with your bot token
+    const CHAT_ID = 'YOUR_CHAT_ID';     // replace with your chat ID
+
+    document.getElementById('booking-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+      const message = `New booking:\nName: ${data.get('name')}\nClass: ${data.get('class')}\nSubject: ${data.get('subject')}\nPhone: ${data.get('phone')}`;
+
+      try {
+        const res = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ chat_id: CHAT_ID, text: message })
+        });
+        if (res.ok) {
+          alert('Booking sent!');
+          form.reset();
+        } else {
+          alert('Failed to send booking.');
+        }
+      } catch {
+        alert('Failed to send booking.');
+      }
+    });
+
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
