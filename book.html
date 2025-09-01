@@ -64,17 +64,32 @@
       const form = e.target;
       const data = new FormData(form);
       const message = `New booking:\nName: ${data.get('name')}\nClass: ${data.get('class')}\nSubject: ${data.get('subject')}\nPhone: ${data.get('phone')}`;
+      const emailPayload = {
+        name: data.get('name'),
+        class: data.get('class'),
+        subject: data.get('subject'),
+        phone: data.get('phone'),
+        _subject: 'New booking request'
+      };
 
       try {
-        const res = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+        const emailRes = await fetch('https://formsubmit.co/ajax/padhado@gmail.com', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ chat_id: CHAT_ID, text: message })
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(emailPayload)
         });
+
+        if (emailRes.ok && telegramRes.ok) {
+          window.location.href = GROUP_LINK;
+
         if (res.ok) {
           window.location.href = GROUP_LINK;
           alert('Booking sent!');
           form.reset();
+
         } else {
           alert('Failed to send booking.');
         }
