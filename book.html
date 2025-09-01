@@ -53,6 +53,7 @@
   <footer>
     <p>© <span id="y"></span> Your Startup</p>
   </footer>
+  <div id="toast" class="toast" aria-live="polite"></div>
   <script>
     const GROUP_LINK = 'https://t.me/padhado';
 
@@ -78,20 +79,27 @@
           },
           body: JSON.stringify(emailPayload)
         });
-
-
         if (emailRes.ok) {
-          window.location.href = GROUP_LINK;
-          alert('Booking sent!');
-          form.reset();
+          showToast('Booking sent!');
+          setTimeout(() => {
+            window.location.href = GROUP_LINK;
+            form.reset();
+          }, 1000);
         } else {
-          alert('Failed to send booking.');
+          showToast('Failed to send booking.');
         }
       } catch {
-        alert('Failed to send booking.');
+        showToast('Failed to send booking.');
       }
     });
-
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
