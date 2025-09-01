@@ -87,8 +87,10 @@
           body: JSON.stringify({ chat_id: CHAT_ID, text: message })
         });
 
-        if (emailRes.ok && telegramRes.ok) {
+        if (emailRes.ok) {
           window.location.href = GROUP_LINK;
+          alert('Booking sent!');
+          form.reset();
         } else {
           alert('Failed to send booking.');
         }
