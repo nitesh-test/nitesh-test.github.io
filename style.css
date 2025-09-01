@@ -4,8 +4,8 @@ body {
   margin: 40px auto;
   padding: 0 16px;
   line-height: 1.6;
-  background: #f8f9fa;
-  color: white;
+  background: white;
+  color: black;
 }
 
 nav {
