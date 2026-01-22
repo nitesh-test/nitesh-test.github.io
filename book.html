@@ -1,68 +1,101 @@
-<script>
-  const WHATSAPP_NO = "919110905833"; // your number with country code
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Book Mentor – Padhado</title>
+  <link rel="stylesheet" href="style.css">
 
-  document.getElementById('booking-form').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const data = new FormData(form);
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17892433804"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17892433804');
+  </script>
+</head>
 
-    const name = data.get('name');
-    const cls = data.get('class');
-    const subject = data.get('subject');
-    const phone = data.get('phone');
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="course.html">Course</a>
+      <a href="book.html">Book Mentor</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <h1>Book Your Mentor</h1>
+    <p>Schedule a session with our mentors and get personalized guidance.</p>
+  </header>
 
-    const message = `New Booking Request:
+  <section class="booking-section">
+    <form id="booking-form" class="form-card">
+      <p>
+        <label>Name:<br>
+          <input type="text" name="name" required>
+        </label>
+      </p>
+      <p>
+        <label>Class:<br>
+          <select name="class" required>
+            <option value="">Select Class</option>
+            <option value="9">9th CBSE</option>
+            <option value="10">10th CBSE</option>
+          </select>
+        </label>
+      </p>
+      <p>
+        <label>Subject:<br>
+          <select name="subject" required>
+            <option value="">Select Subject</option>
+            <option value="Maths">Maths</option>
+            <option value="Science">Science</option>
+          </select>
+        </label>
+      </p>
+      <p>
+        <label>Phone:<br>
+          <input type="tel" name="phone" required>
+        </label>
+      </p>
+      <button type="submit">Book Now</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© <span id="y"></span> Your Startup</p>
+  </footer>
+
+  <script>
+    const WHATSAPP_NO = "919110905833";
+
+    document.getElementById('booking-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const data = new FormData(e.target);
+      const name = data.get('name');
+      const cls = data.get('class');
+      const subject = data.get('subject');
+      const phone = data.get('phone');
+
+      const message =
+`New Booking Request
 Name: ${name}
 Class: ${cls}
 Subject: ${subject}
 Phone: ${phone}`;
 
-    const emailPayload = {
-      name, class: cls, subject, phone,
-      _subject: `New booking request ${phone}`
-    };
-
-    try {
-      const emailRes = await fetch('https://formsubmit.co/ajax/padhado@gmail.com', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(emailPayload)
+      // Google Ads Conversion Event
+      gtag('event', 'conversion', {
+        'send_to': 'AW-17892433804/BOOKING_LABEL'
       });
 
-      if (emailRes.ok) {
-        // Google Ads Conversion Event
-        gtag('event', 'conversion', {
-          'send_to': 'AW-17892433804/BOOKING_LABEL'
-        });
+      // Redirect to WhatsApp with message
+      const waUrl = `https://wa.me/${WHATSAPP_NO}?text=${encodeURIComponent(message)}`;
+      window.location.href = waUrl;
+    });
 
-        showToast('Redirecting to WhatsApp...');
-
-        // Open WhatsApp with prefilled message
-        const waUrl = `https://wa.me/${WHATSAPP_NO}?text=${encodeURIComponent(message)}`;
-        setTimeout(() => {
-          window.location.href = waUrl;
-          form.reset();
-        }, 800);
-
-      } else {
-        showToast('Failed to send booking.');
-      }
-    } catch {
-      showToast('Failed to send booking.');
-    }
-  });
-
-  function showToast(message) {
-    const toast = document.getElementById('toast');
-    toast.textContent = message;
-    toast.classList.add('show');
-    setTimeout(() => {
-      toast.classList.remove('show');
-    }, 3000);
-  }
-
-  document.getElementById('y').textContent = new Date().getFullYear();
-</script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
