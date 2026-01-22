@@ -15,6 +15,7 @@
     gtag('config', 'AW-17892433804');
   </script>
 </head>
+
 <body>
   <header>
     <nav>
@@ -34,6 +35,7 @@
           <input type="text" name="name" required>
         </label>
       </p>
+
       <p>
         <label>Class:<br>
           <select name="class" required>
@@ -43,6 +45,7 @@
           </select>
         </label>
       </p>
+
       <p>
         <label>Subject:<br>
           <select name="subject" required>
@@ -52,11 +55,18 @@
           </select>
         </label>
       </p>
+
       <p>
         <label>WhatsApp Number:<br>
-          <input type="tel" name="phone" required>
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Enter your WhatsApp number"
+            pattern="[0-9]{10}"
+            required>
         </label>
       </p>
+
       <button type="submit">Book Now</button>
     </form>
   </section>
@@ -65,60 +75,34 @@
     <p>© <span id="y"></span> Your Startup</p>
   </footer>
 
-  <div id="toast" class="toast" aria-live="polite"></div>
-
   <script>
-    const GROUP_LINK = 'https://t.me/padhado';
+    const WHATSAPP_NO = "919110905833"; // Your WhatsApp number
 
-    document.getElementById('booking-form').addEventListener('submit', async (e) => {
+    document.getElementById('booking-form').addEventListener('submit', (e) => {
       e.preventDefault();
-      const form = e.target;
-      const data = new FormData(form);
 
-      const emailPayload = {
-        name: data.get('name'),
-        class: data.get('class'),
-        subject: data.get('subject'),
-        phone: data.get('phone'),
-        _subject: `New booking request ${data.get('phone')}`
-      };
+      const data = new FormData(e.target);
+      const name = data.get('name');
+      const cls = data.get('class');
+      const subject = data.get('subject');
+      const phone = data.get('phone');
 
-      try {
-        const emailRes = await fetch('https://formsubmit.co/ajax/padhado@gmail.com', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: JSON.stringify(emailPayload)
-        });
+      const message =
+`New Booking Request
+Name: ${name}
+Class: ${cls}
+Subject: ${subject}
+WhatsApp: ${phone}`;
 
-        if (emailRes.ok) {
-          // Google Ads Conversion Event (replace BOOKING_LABEL)
-          gtag('event', 'conversion', {
-            'send_to': 'AW-17892433804/BOOKING_LABEL'
-          });
+      // Google Ads Conversion Event
+      gtag('event', 'conversion', {
+        'send_to': 'AW-17892433804/BOOKING_LABEL'
+      });
 
-          showToast('Booking sent!');
-          setTimeout(() => {
-            form.reset();
-          }, 1000);
-        } else {
-          showToast('Failed to send booking.');
-        }
-      } catch {
-        showToast('Failed to send booking.');
-      }
+      // Open WhatsApp with pre-filled message
+      const waUrl = `https://wa.me/${WHATSAPP_NO}?text=${encodeURIComponent(message)}`;
+      window.location.href = waUrl;
     });
-
-    function showToast(message) {
-      const toast = document.getElementById('toast');
-      toast.textContent = message;
-      toast.classList.add('show');
-      setTimeout(() => {
-        toast.classList.remove('show');
-      }, 3000);
-    }
 
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
