@@ -5,7 +5,19 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Course – Padhado</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header { background: #0d6efd; color: white; padding: 20px; text-align: center; }
+    nav a { color: white; margin: 0 10px; text-decoration: none; }
+    .course-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; padding: 20px; }
+    .course-card { border: 1px solid #ddd; padding: 16px; border-radius: 8px; }
+    .button { display: inline-block; padding: 8px 14px; background: #0d6efd; color: #fff; text-decoration: none; border-radius: 6px; }
+    .video-section { padding: 20px; }
+    .video-card iframe { width: 100%; max-width: 420px; height: 236px; margin: 10px; border-radius: 8px; }
+    footer { text-align: center; padding: 10px; background: #f5f5f5; }
+  </style>
 </head>
+
 <body>
   <header>
     <nav>
@@ -17,36 +29,42 @@
     <h1>Course</h1>
     <p>Join our maths and science sessions to ask questions in real time and collaborate with classmates.</p>
   </header>
+
   <section class="course-grid">
     <div class="course-card">
       <h3>Class 10 Maths</h3>
       <p>Full syllabus coverage with practice questions and tips.</p>
       <a class="button" href="book.html">Book Now</a>
     </div>
+
     <div class="course-card">
       <h3>Class 10 Science</h3>
       <p>Understand concepts with experiments and clear explanations.</p>
       <a class="button" href="book.html">Book Now</a>
     </div>
   </section>
+
   <section class="video-section">
     <h2>Maths Chapters</h2>
     <div class="video-card">
       <h3>Quadratic Equations</h3>
-      <iframe src="https://www.youtube.com/embed/v=kf9oRoKZlxs&t=5s" title="Quadratic Equations" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/v=kf9oRoKZlxs&t=5s" title="Quadratic Equations" allowfullscreen></iframe>
-       <iframe src="https://www.youtube.com/embed/v=kf9oRoKZlxs&t=5s" title="Quadratic Equations" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/v=kf9oRoKZlxs&t=5s" title="Quadratic Equations" allowfullscreen></iframe>
-       <iframe src="https://www.youtube.com/embed/v=kf9oRoKZlxs&t=5s" title="Quadratic Equations" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/v=kf9oRoKZlxs&t=5s" title="Quadratic Equations" allowfullscreen></iframe>
-      
-      
-      
+
+      <iframe src="https://www.youtube.com/embed/kf9oRoKZlxs?start=5" title="Quadratic Equations" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/kf9oRoKZlxs?start=5" title="Quadratic Equations" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/kf9oRoKZlxs?start=5" title="Quadratic Equations" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/kf9oRoKZlxs?start=5" title="Quadratic Equations" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/kf9oRoKZlxs?start=5" title="Quadratic Equations" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/kf9oRoKZlxs?start=5" title="Quadratic Equations" allowfullscreen></iframe>
+
     </div>
   </section>
+
   <footer>
     <p>© <span id="y"></span> Your Startup</p>
   </footer>
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
