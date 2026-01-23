@@ -5,7 +5,56 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Padhado – Simple & Affordable Maths</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #f7f9fc; }
+    header.hero {
+      background: linear-gradient(135deg, #0d6efd, #4facfe);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 18px;
+      background: #fff;
+      color: #0d6efd;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .section {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+    .card h3 { color: #0d6efd; }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #eef2f7;
+    }
+  </style>
 </head>
+
 <body>
   <header class="hero">
     <nav>
@@ -14,17 +63,67 @@
       <a href="book.html">Book Mentor</a>
       <a href="contact.html">Contact</a>
     </nav>
+
     <h1>Padhado</h1>
-    <p>Learn Maths Anytime, Anywhere – Affordable, Flexible, Instant.</p>
-    <p>Padhado is an edtech platform dedicated to making mathematics simple and affordable for every student. We provide high-quality tutorials, theory videos, and practice question sets (PYQs) to strengthen conceptual understanding. Currently, we are offering free math courses on YouTube for Class 10 (State Board/CBSE), and students can easily access lessons anytime.</p>
-    <p>In December, we are launching our Instant Mentor Connect feature, which will allow students to connect with experienced mentors instantly for doubt-solving and personal guidance. With recorded courses, live sessions, and upcoming instant support, Padhado is building a complete online ecosystem for effective and accessible math learning.</p>
-    <p><a class="button" href="https://t.me/padhado" target="_blank" rel="noopener">Connect with Mentor on Telegram</a></p>
-  
+    <p><strong>Learn Maths Anytime, Anywhere – Affordable, Flexible, Instant.</strong></p>
+
+    <p>
+      Padhado is an edtech platform dedicated to making mathematics simple and affordable for every student.
+      We provide high-quality theory videos, practice questions (PYQs), and live guidance.
+      Currently, we offer <strong>free Class 10 Maths courses on YouTube</strong> (CBSE/State Board).
+    </p>
+
+    <p>
+      In December, we are launching <strong>Instant Mentor Connect</strong> – students can connect with
+      experienced teachers for real-time doubt solving and personal guidance.
+    </p>
+
+    <a class="button" href="https://t.me/padhado" target="_blank" rel="noopener">
+      Connect with Mentor on Telegram
+    </a>
   </header>
+
+  <section class="section">
+    <h2 style="text-align:center;">What We Offer</h2>
+    <div class="features">
+      <div class="card">
+        <h3>Full Maths Coaching</h3>
+        <p>Complete syllabus coverage with clear concepts, examples, and exam-focused practice.</p>
+      </div>
+
+      <div class="card">
+        <h3>1-to-1 Coaching</h3>
+        <p>One student, one teacher. Personal attention for faster improvement and confidence.</p>
+      </div>
+
+      <div class="card">
+        <h3>Small Group Batches</h3>
+        <p>Study in small groups of <strong>2 to 10 students</strong> for better interaction and focus.</p>
+      </div>
+
+      <div class="card">
+        <h3>Flexible Batch Size</h3>
+        <p>Choose your batch size – solo learning or group study as per your comfort.</p>
+      </div>
+
+      <div class="card">
+        <h3>Instant Doubt Solving</h3>
+        <p>Ask your doubts anytime and get quick help from experienced mentors.</p>
+      </div>
+
+      <div class="card">
+        <h3>Affordable Learning</h3>
+        <p>High-quality education at student-friendly prices. First class can be free.</p>
+      </div>
+    </div>
+  </section>
+
   <footer>
-    <p>© <span id="y"></span> Your Startup</p>
+    <p>© <span id="y"></span> Padhado</p>
   </footer>
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-
