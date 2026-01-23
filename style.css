@@ -1,3 +1,7 @@
+:root {
+  --gutter: 24px; /* space from left & right edges */
+}
+
 /* Base layout */
 html, body {
   width: 100%;
@@ -16,7 +20,7 @@ body {
 /* Navigation */
 nav {
   background: linear-gradient(90deg, #28a745, #ff9800);
-  padding: 12px;
+  padding: 12px var(--gutter);
   margin-bottom: 24px;
   display: flex;
   justify-content: center;
@@ -41,7 +45,7 @@ header {
 .hero {
   background: linear-gradient(135deg, #6fda44, #28a745);
   color: #fff;
-  padding: 40px 20px;
+  padding: 40px var(--gutter);
   text-align: center;
 }
 
@@ -64,7 +68,7 @@ h1 {
 .booking-section {
   display: flex;
   justify-content: center;
-  padding: 20px;
+  padding: 20px var(--gutter);
 }
 
 .form-card {
@@ -131,7 +135,7 @@ footer {
   font-size: 0.9em;
   color: #333;
   text-align: center;
-  padding: 15px;
+  padding: 15px var(--gutter);
   background: #eef2f7;
 }
 
@@ -140,7 +144,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  padding: 20px;
+  padding: 20px var(--gutter);
 }
 
 .course-card {
@@ -159,7 +163,7 @@ footer {
 /* Video section */
 .video-section {
   margin-top: 40px;
-  padding: 20px;
+  padding: 20px var(--gutter);
 }
 
 .video-section h2 {
