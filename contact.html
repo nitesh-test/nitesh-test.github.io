@@ -1,62 +1,212 @@
-<section class="plans">
-  <h2>Our Teaching Plans</h2>
-  <p style="text-align:center;">
-    All classes are conducted on <strong>Google Meet</strong>.  
-    Your <strong>first class is FREE</strong> (30–40 minutes) to experience our teaching.
-  </p>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Book Mentor – Padhado</title>
+  <link rel="stylesheet" href="style.css">
 
-  <div class="plan-list">
-    <div class="plan-card">
-      <p class="small">Best for weak students & exam-focused prep</p>
-      <strong>1-to-1 Mentorship</strong>
-      <p>₹300 / hour</p>
-      <ul class="small" style="text-align:left;">
-        <li>Personal teacher for one student</li>
-        <li>100% doubt solving</li>
-        <li>Custom pace & revision</li>
-        <li>Perfect for board exam prep</li>
-      </ul>
-    </div>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17892433804"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17892433804');
+  </script>
 
-    <div class="plan-card">
-      <p class="small">Learn with a friend</p>
-      <strong>2 Students Batch</strong>
-      <p>₹150 / hour / student</p>
-      <ul class="small" style="text-align:left;">
-        <li>Two students, one mentor</li>
-        <li>More interaction than large classes</li>
-        <li>Cost-effective</li>
-        <li>Healthy competition</li>
-      </ul>
-    </div>
+  <style>
+    .notice-bar {
+      width: 100%;
+      background: #ffeb3b;
+      color: #000;
+      text-align: center;
+      padding: 10px 16px;
+      font-weight: bold;
+    }
+    .plans {
+      max-width: 900px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .plans h2 {
+      color: #28a745;
+      text-align: center;
+      margin-top: 0;
+    }
+    .plan-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .plan-card {
+      border: 1px solid #eee;
+      border-radius: 8px;
+      padding: 14px;
+      text-align: center;
+    }
+    .plan-card strong {
+      color: #0d6efd;
+      font-size: 18px;
+    }
+    .small {
+      font-size: 13px;
+      color: #555;
+    }
+  </style>
+</head>
 
-    <div class="plan-card">
-      <p class="small">Small group learning</p>
-      <strong>4 Students Batch</strong>
-      <p>₹100 / hour / student</p>
-      <ul class="small" style="text-align:left;">
-        <li>Ideal balance of cost & focus</li>
-        <li>Interactive sessions</li>
-        <li>Regular tests & practice</li>
-        <li>Concept clarity</li>
-      </ul>
-    </div>
+<body>
 
-    <div class="plan-card">
-      <p class="small">Most affordable option</p>
-      <strong>8 Students Batch</strong>
-      <p>₹60 / hour / student</p>
-      <ul class="small" style="text-align:left;">
-        <li>Group learning environment</li>
-        <li>Lowest cost per student</li>
-        <li>Structured syllabus coverage</li>
-        <li>Regular doubt sessions</li>
-      </ul>
-    </div>
+  <!-- Free Call Banner -->
+  <div class="notice-bar">
+    🎉 First Google Meet Class is <strong>FREE</strong> (30–40 Minutes) – Try before you pay!
   </div>
 
-  <p class="small" style="text-align:center; margin-top:16px;">
-    You can also choose a <strong>Monthly Subscription</strong>,  
-    <strong>Full Course Plan</strong>, or <strong>Chapter-wise Classes</strong>.
-  </p>
-</section>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="course.html">Course</a>
+      <a href="book.html">Book Mentor</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <h1>Book Your Mentor</h1>
+  </header>
+
+  <!-- Plans Section -->
+  <section class="plans">
+    <h2>Our Teaching Plans</h2>
+    <p style="text-align:center;">
+      All classes are conducted on <strong>Google Meet</strong>.  
+      Your <strong>first class is FREE</strong> (30–40 minutes) to understand our teaching style.
+    </p>
+
+    <div class="plan-list">
+      <div class="plan-card">
+        <strong>1-to-1 Mentorship</strong>
+        <p>₹300 / hour</p>
+        <p class="small">One student, one teacher – full personal attention.</p>
+      </div>
+
+      <div class="plan-card">
+        <strong>2 Students Batch</strong>
+        <p>₹150 / hour / student</p>
+        <p class="small">Learn with a friend, better focus.</p>
+      </div>
+
+      <div class="plan-card">
+        <strong>4 Students Batch</strong>
+        <p>₹100 / hour / student</p>
+        <p class="small">Small group, interactive learning.</p>
+      </div>
+
+      <div class="plan-card">
+        <strong>8 Students Batch</strong>
+        <p>₹60 / hour / student</p>
+        <p class="small">Most affordable group learning.</p>
+      </div>
+    </div>
+
+    <p class="small" style="text-align:center; margin-top:16px;">
+      You can also choose a <strong>Monthly Subscription</strong>,  
+      <strong>Full Course Plan</strong>, or <strong>Chapter-wise Classes</strong>.
+    </p>
+  </section>
+
+  <section class="booking-section">
+    <form id="booking-form" class="form-card">
+
+      <p>
+        <label>Name:<br>
+          <input type="text" name="name" required>
+        </label>
+      </p>
+
+      <p>
+        <label>Class:<br>
+          <select name="class" required>
+            <option value="">Select Class</option>
+            <option value="9">9th CBSE</option>
+            <option value="10">10th CBSE</option>
+          </select>
+        </label>
+      </p>
+
+      <p>
+        <label>Subject:<br>
+          <select name="subject" required>
+            <option value="">Select Subject</option>
+            <option value="Maths">Maths</option>
+            <option value="Science">Science</option>
+          </select>
+        </label>
+      </p>
+
+      <p>
+        <label>Batch Size:<br>
+          <select name="batch" required>
+            <option value="">Select Batch Type</option>
+            <option value="1-to-1 Personal (₹300/hr)">1-to-1 (₹300/hr)</option>
+            <option value="2 Students (₹150/hr)">2 Students (₹150/hr)</option>
+            <option value="4 Students (₹100/hr)">4 Students (₹100/hr)</option>
+            <option value="8 Students (₹60/hr)">8 Students (₹60/hr)</option>
+          </select>
+        </label>
+      </p>
+
+      <p>
+        <label>WhatsApp Number:<br>
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Enter your WhatsApp number"
+            pattern="[0-9]{10}"
+            required>
+        </label>
+      </p>
+
+      <button type="submit">Book Free First Class</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© <span id="y"></span> Padhado</p>
+  </footer>
+
+  <script>
+    const WHATSAPP_NO = "919110905833";
+
+    document.getElementById('booking-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const data = new FormData(e.target);
+      const name = data.get('name');
+      const cls = data.get('class');
+      const subject = data.get('subject');
+      const batch = data.get('batch');
+      const phone = data.get('phone');
+
+      const message =
+`New Booking Request
+Name: ${name}
+Class: ${cls}
+Subject: ${subject}
+Batch: ${batch}
+WhatsApp: ${phone}`;
+
+      gtag('event', 'conversion', {
+        'send_to': 'AW-17892433804/bdz9CJjIweobEIy_49NC'
+      });
+
+      const waUrl = `https://wa.me/${WHATSAPP_NO}?text=${encodeURIComponent(message)}`;
+      window.location.href = waUrl;
+    });
+
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
