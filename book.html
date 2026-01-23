@@ -24,6 +24,11 @@
       padding: 10px 16px;
       font-weight: bold;
     }
+    .hint {
+      font-size: 12px;
+      color: #666;
+      margin-top: 4px;
+    }
   </style>
 </head>
 
@@ -42,11 +47,11 @@
       <a href="contact.html">Contact</a>
     </nav>
     <h1>Book Your Mentor</h1>
-  
   </header>
 
   <section class="booking-section">
     <form id="booking-form" class="form-card">
+
       <p>
         <label>Name:<br>
           <input type="text" name="name" required>
@@ -71,6 +76,20 @@
             <option value="Science">Science</option>
           </select>
         </label>
+      </p>
+
+      <!-- New Batch Size Field -->
+      <p>
+        <label>Batch Size:<br>
+          <select name="batch" required>
+            <option value="">Select Batch Type</option>
+            <option value="1-to-1 Personal">1-to-1 (Personal Mentor)</option>
+            <option value="2 Students">2 Students in a Batch</option>
+            <option value="4 Students">4 Students in a Batch</option>
+            <option value="8 Students">8 Students in a Batch</option>
+          </select>
+        </label>
+        <div class="hint">Choose how many students you want in your class.</div>
       </p>
 
       <p>
@@ -102,6 +121,7 @@
       const name = data.get('name');
       const cls = data.get('class');
       const subject = data.get('subject');
+      const batch = data.get('batch');
       const phone = data.get('phone');
 
       const message =
@@ -109,6 +129,7 @@
 Name: ${name}
 Class: ${cls}
 Subject: ${subject}
+Batch Size: ${batch}
 WhatsApp: ${phone}`;
 
       // Google Ads Conversion Event
