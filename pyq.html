@@ -26,7 +26,19 @@
       max-width: 1000px;
       margin: auto;
     }
-
+.hero {
+      width: 100%;
+      background: linear-gradient(135deg, #0d6efd, #4facfe);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+ nav a {
+      color: white;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: 500;
+    }
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -69,7 +81,7 @@
 </head>
 
 <body>
-  <header>
+  <header class="hero">
       <nav>
       <a href="index.html">Home</a>
       <a href="course.html">Course</a>
