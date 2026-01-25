@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Download PYQ – Padhado</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f9fc;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0d6efd, #4facfe);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .section {
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .card h3 {
+      color: #0d6efd;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 8px 16px;
+      background: #0d6efd;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .card a:hover {
+      background: #0b5ed7;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #eef2f7;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Class 10 Maths – PYQ</h1>
+    <p>Download Previous Year Question Papers (PDF)</p>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid">
+
+        <div class="card">
+          <h3>Algebra</h3>
+          <p>PYQ PDF</p>
+          <a href="pdf/class10-algebra-pyq.pdf" download>Download</a>
+        </div>
+
+        <div class="card">
+          <h3>Geometry</h3>
+          <p>PYQ PDF</p>
+          <a href="pdf/class10-geometry-pyq.pdf" download>Download</a>
+        </div>
+
+        <div class="card">
+          <h3>Trigonometry</h3>
+          <p>PYQ PDF</p>
+          <a href="pdf/class10-trigonometry-pyq.pdf" download>Download</a>
+        </div>
+
+        <div class="card">
+          <h3>Statistics</h3>
+          <p>PYQ PDF</p>
+          <a href="pdf/class10-statistics-pyq.pdf" download>Download</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© Padhado</p>
+  </footer>
+</body>
+</html>
